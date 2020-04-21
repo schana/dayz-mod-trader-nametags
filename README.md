@@ -2,4 +2,4 @@
 
 Adds nametags to players in the Trader Safezones.
 
-<https://steamcommunity.com/sharedfiles/filedetails/?id=??????????>
+<https://steamcommunity.com/sharedfiles/filedetails/?id=2069143015>
