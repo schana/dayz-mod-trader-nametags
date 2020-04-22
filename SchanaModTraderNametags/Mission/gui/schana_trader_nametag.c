@@ -75,7 +75,7 @@ class SchanaTraderNametagMenu extends UIScriptedMenu
         {
             float distance = vector.Distance(position, player.m_Trader_TraderPositions.Get(i));
 
-            if (distance <= player.m_Trader_TraderSafezones.Get(i))
+            if (distance <= Math.Min(100, player.m_Trader_TraderSafezones.Get(i)))
             {
                 return true;
             }
