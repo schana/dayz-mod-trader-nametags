@@ -11,7 +11,7 @@ class SchanaTraderNametagMenu extends UIScriptedMenu
         m_SchanaTraderNametagRootWidget.Show(false);
         m_SchanaTraderNametagPlayer = player;
 
-        GetGame().GetCallQueue(CALL_CATEGORY_GUI).CallLater(this.SchanaUpdate, 1, true);
+        GetGame().GetCallQueue(CALL_CATEGORY_GUI).CallLater(this.SchanaUpdate, 10, true);
     }
 
     void ~SchanaTraderNametagMenu()
@@ -67,7 +67,7 @@ class SchanaTraderNametagMenu extends UIScriptedMenu
         return true;
     }
 
-    private bool SchanaIsInSafezone(PlayerBase player, PlayerBase taggedPlayer)
+    static bool SchanaIsInSafezone(PlayerBase player, PlayerBase taggedPlayer)
     {
         vector position = taggedPlayer.GetPosition();
 

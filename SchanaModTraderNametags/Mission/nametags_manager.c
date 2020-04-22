@@ -18,18 +18,20 @@ class SchanaTraderNametagsManager
         PlayerBase activePlayer = GetGame().GetPlayer();
         if (activePlayer && activePlayer.GetIdentity())
         {
-            string activePlayerId = activePlayer.GetIdentity().GetId();
-
-            string id;
-            foreach (Man man : ClientData.m_PlayerBaseList)
+            if (SchanaTraderNametagMenu.SchanaIsInSafezone(activePlayer, activePlayer))
             {
-                PlayerBase player = PlayerBase.Cast(man);
-                if (player && player.GetIdentity())
+                string activePlayerId = activePlayer.GetIdentity().GetId();
+                string id;
+                foreach (Man man : ClientData.m_PlayerBaseList)
                 {
-                    id = player.GetIdentity().GetId();
-                    if (!m_SchanaNametags.Get(id) && id != activePlayerId)
+                    PlayerBase player = PlayerBase.Cast(man);
+                    if (player && player.GetIdentity())
                     {
-                        m_SchanaNametags[id] = new SchanaTraderNametagMenu(player);
+                        id = player.GetIdentity().GetId();
+                        if (!m_SchanaNametags.Get(id) && id != activePlayerId)
+                        {
+                            m_SchanaNametags[id] = new SchanaTraderNametagMenu(player);
+                        }
                     }
                 }
             }
